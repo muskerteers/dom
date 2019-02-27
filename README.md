@@ -82,5 +82,7 @@
         </html>
       ```
    7. Write a JavaScript program to calculate the volume of a sphere.
+   
+      ![alt text](https://github.com/muskerteers/dom/blob/master/volume-sphere-html-form.png)
     
    8. Write a JavaScript program to get the width and height of the window
