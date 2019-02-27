@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="content">
+    <p id="details">I wanna go home</p>
+    <p class="details">1</p>
+    <p class="details">2</p>
+    <p class="details">3</p>
+
+    <a href="/home.html" id="link">Go Home</a>
+    <br>
+    <br>
+    <button onclick="updateMyPage()">Display</button>
+    <br>
+    <br>
+    <button onclick="createANewChild()">Create Child</button>
+</div>
+<br><br><br><br>
+<form>
+    <label for="name">Name
+        <input type="text" id="name">
+    </label>
+    <br>
+    <br>
+    <label for="email">Email
+        <input type="text" id="email">
+    </label>
+    <br>
+    <br>
+    <label for="phone">Phone
+        <input type="text" id="phone">
+    </label>
+    <br>
+    <br>
+
+    <Button type="button" onclick="showDetails()">Show Details</Button>
+</form>
+
+<div id="user"></div>
+
+<script>
+    /**
+     * 1. getElementById
+     * 2. getElementsByClassName
+     * 3. getElementsByTagName
+     *
+     * 4. innerHTML
+     * 5. innerText
+     * 6. attribute
+     * 7. setAttribute
+     * 8. style
+     *
+     * 9. createElement
+     * 10. removeChild
+     * 11. appendChild
+     * 12. replaceChild
+     * 13. write
+     */
+
+    function updateMyPage() {
+        let item = document.getElementById('details');
+        item.innerText = 'No you do not want to go home.'
+        item.style.color = 'red';
+        item.style.fontSize = '20px';
+    }
+
+    let link = document.getElementById('link');
+    link.setAttribute('href', 'objects.html')
+
+    function createANewChild() {
+        let paragraph = document.createElement('p');
+        paragraph.innerText = 'Hello World!!'
+        paragraph.style.color = 'green';
+        paragraph.setAttribute('class', 'details');
+
+        let parent = document.getElementById('content');
+        parent.appendChild(paragraph)
+    }
+
+    let user = {};
+
+    function showDetails() {
+        user.name = document.getElementById('name').value;
+        user.email = document.getElementById('email').value;
+        user.phone = document.getElementById('phone').value;
+
+        let user_div = document.getElementById('user');
+        user_div.innerHTML += `
+         <ul>
+          <li>${user.name }</li>
+          <li>${user.email }</li>
+          <li>${user.phone }</li>
+        </ul>
+         `
+    }
+
+</script>
+</body>
+</html>
