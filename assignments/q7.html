@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form >
+    <label>Radius
+        <input id="radius" type="number">
+    </label>
+    <br><br>
+    <label> Volume
+        <input id="volume" type="number" value=0.00>
+    </label>
+    <br><br>
+    <button onclick="calculateVolume()" type="button" >Calculate</button>
+</form>
+
+<script>
+function calculateVolume() {
+    let radius = parseInt(document.getElementById('radius').value);
+    let volume = (4/3) * (22/7) * Math.pow(radius, 3);
+    document.getElementById('volume').value = volume
+}
+</script>
+
+</body>
+</html>
